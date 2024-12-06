@@ -1,0 +1,115 @@
+/* responsive.css */
+
+.scanner-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* Ajusta según sea necesario */
+  }
+  
+  .scanner {
+    text-align: center;
+  }
+  #qr-reader__dashboard_section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+  #qr-reader {
+    width: 50vw; /* Ajusta el tamaño inicial */
+    height: 50vw; /* Mantén la proporción cuadrada */
+    margin: 0 auto;
+    position: relative;
+    border: 0px !important;
+  } 
+  #qr-reader__scan_region {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  [data-theme='dark']   #qr-reader__scan_region > img {
+    filter: brightness(0) invert(0.8) !important; /* Aplica un filtro para hacer la imagen blanca */
+}
+  #qr-reader__scan_region > img {
+    width: 65%;
+    height: 65%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el área sin distorsionarse */
+}
+
+.scanner-container h1 {
+    font-weight: bold;
+    font-size: 6xl;
+    margin-top: 0;
+    padding-bottom: 10%;
+    color: var(--text-base-content);
+
+}
+
+@media (min-width: 1280px) {
+    .scanner-container h1 {
+        font-size: 4xl;
+    }
+}
+
+.dark .scanner-container h1 {
+    color: var(--neutral-200);
+}
+  @media (max-width: 1000px) {
+    #qr-reader {
+        width: 50vw;
+        height: 50vw;
+        margin: 0 auto;
+        position: relative;
+        
+    }
+    #qr-shaded-region {
+        width: 80% !important;
+        height: 80% !important;
+        top: 10% !important;
+        left: 10% !important;
+    }
+    #qr-shaded-region .corner {
+        width: 0%;
+        height: 0%;
+        position: absolute;
+    }
+}
+
+@media (max-width: 768px) {
+    #qr-reader {
+        width: 70vw;
+        height: 70vw;
+        margin: 0 auto;
+      position: relative;
+    }
+    #qr-shaded-region {
+        width: 80% !important;
+        height: 80% !important;
+        top: 10% !important;
+        left: 10% !important;
+    }
+    #qr-shaded-region .corner {
+        width: 10%;
+        height: 10%;
+        position: absolute;
+    }
+}
+
+@media (max-width: 480px) {
+    #qr-reader {
+        width: 90vw;
+        height: 90vw;
+    }
+    #qr-shaded-region {
+        width: 100% !important;
+        height: 100% !important;
+        top: 0% !important;
+        left: 0% !important;
+    }
+    
+    #qr-shaded-region .corner {
+        width: 30% !important;
+        height: 30% !important;
+        position: relative;
+    }
+}
